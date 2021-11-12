@@ -1,0 +1,68 @@
+﻿body {
+    height: 100%;
+    font-family: 'PT Serif', serif;
+}
+
+nav {
+    background-color: black;
+}
+
+.ContenidoTexto {
+    font-style: normal;
+    color: black;
+}
+
+.seleccion:hover {
+    background-color: #40b01c;
+}
+
+.ubicacionLogo{
+    margin-left: 20vh;
+}
+
+.tamannoLetraNav{
+    font-size:2,8vh;
+}
+
+.tamannoLetraDefault {
+    font-size: 7vh;
+}
+
+.login {
+    border: #40b01c;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.fondoDefault {
+    background-color: #39FF14;
+}
+
+.letraTitulos {
+    font-size: 7vh;
+    color: #40b01c;
+    padding: 3vh;
+}
+
+.btn-dis {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+
+.btn-dis:hover {
+    color: black;
+    background-color: black;
+    border-color: white;
+}
+
+
+hr {
+    width: 100%;
+    height: 4%;
+    resize: horizontal;
+}
+
+

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileToolStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MobileToolStoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblComentario" EntityType="MobileToolStoreModel.TblComentario" />
+    <EntitySet Name="TblDetalleFactura" EntityType="MobileToolStoreModel.TblDetalleFactura" />
+    <EntitySet Name="TblFacturas" EntityType="MobileToolStoreModel.TblFacturas" />
+    <EntitySet Name="TblMarcas" EntityType="MobileToolStoreModel.TblMarcas" />
+    <EntitySet Name="TblProductoMarca" EntityType="MobileToolStoreModel.TblProductoMarca" />
+    <EntitySet Name="TblProductoProveedor" EntityType="MobileToolStoreModel.TblProductoProveedor" />
+    <EntitySet Name="TblProductos" EntityType="MobileToolStoreModel.TblProductos" />
+    <EntitySet Name="TblProveedores" EntityType="MobileToolStoreModel.TblProveedores" />
+    <EntitySet Name="TblUsuarios" EntityType="MobileToolStoreModel.TblUsuarios" />
+    <AssociationSet Name="FK__TblDetall__codig__4CA06362" Association="MobileToolStoreModel.FK__TblDetall__codig__4CA06362">
+      <End Role="TblFacturas" EntitySet="TblFacturas" />
+      <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__4BAC3F29" Association="MobileToolStoreModel.FK__TblProduc__codig__4BAC3F29">
+      <End Role="TblMarcas" EntitySet="TblMarcas" />
+      <End Role="TblProductoMarca" EntitySet="TblProductoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__4AB81AF0" Association="MobileToolStoreModel.FK__TblProduc__codig__4AB81AF0">
+      <End Role="TblProductos" EntitySet="TblProductos" />
+      <End Role="TblProductoMarca" EntitySet="TblProductoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__cedul__49C3F6B7" Association="MobileToolStoreModel.FK__TblProduc__cedul__49C3F6B7">
+      <End Role="TblProveedores" EntitySet="TblProveedores" />
+      <End Role="TblProductoProveedor" EntitySet="TblProductoProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__48CFD27E" Association="MobileToolStoreModel.FK__TblProduc__codig__48CFD27E">
+      <End Role="TblProductos" EntitySet="TblProductos" />
+      <End Role="TblProductoProveedor" EntitySet="TblProductoProveedor" />
+    </AssociationSet>
+    <EntitySet Name="TblProductosMasVendidos" EntityType="MobileToolStoreModel.TblProductosMasVendidos" />
+  </EntityContainer>
+  <EntityType Name="TblComentario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCompleto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mensaje" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblDetalleFactura">
+    <Key>
+      <PropertyRef Name="codigoDetalleFactura" />
+      <PropertyRef Name="codigoFactura" />
+    </Key>
+    <Property Name="codigoDetalleFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoFactura" Type="Int32" Nullable="false" />
+    <Property Name="codigoBarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombreProducto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="12" Scale="1" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="12" Scale="1" />
+    <NavigationProperty Name="TblFacturas" Relationship="MobileToolStoreModel.FK__TblDetall__codig__4CA06362" FromRole="TblDetalleFactura" ToRole="TblFacturas" />
+  </EntityType>
+  <EntityType Name="TblFacturas">
+    <Key>
+      <PropertyRef Name="codigoFactura" />
+    </Key>
+    <Property Name="codigoFactura" Type="Int32" Nullable="false" />
+    <Property Name="nombreCliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaFacturacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="totalPagar" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="numeroTarjeta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaCaducidad" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="codigoSeguridad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblDetalleFactura" Relationship="MobileToolStoreModel.FK__TblDetall__codig__4CA06362" FromRole="TblFacturas" ToRole="TblDetalleFactura" />
+  </EntityType>
+  <EntityType Name="TblMarcas">
+    <Key>
+      <PropertyRef Name="codigoMarca" />
+    </Key>
+    <Property Name="codigoMarca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombreMarca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paisOrigen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblProductoMarca" Relationship="MobileToolStoreModel.FK__TblProduc__codig__4BAC3F29" FromRole="TblMarcas" ToRole="TblProductoMarca" />
+  </EntityType>
+  <EntityType Name="TblProductoMarca">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoBarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codigoMarca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblMarcas" Relationship="MobileToolStoreModel.FK__TblProduc__codig__4BAC3F29" FromRole="TblProductoMarca" ToRole="TblMarcas" />
+    <NavigationProperty Name="TblProductos" Relationship="MobileToolStoreModel.FK__TblProduc__codig__4AB81AF0" FromRole="TblProductoMarca" ToRole="TblProductos" />
+  </EntityType>
+  <EntityType Name="TblProductoProveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoBarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cedulaLegalProveedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblProveedores" Relationship="MobileToolStoreModel.FK__TblProduc__cedul__49C3F6B7" FromRole="TblProductoProveedor" ToRole="TblProveedores" />
+    <NavigationProperty Name="TblProductos" Relationship="MobileToolStoreModel.FK__TblProduc__codig__48CFD27E" FromRole="TblProductoProveedor" ToRole="TblProductos" />
+  </EntityType>
+  <EntityType Name="TblProductos">
+    <Key>
+      <PropertyRef Name="codigoBarras" />
+    </Key>
+    <Property Name="codigoBarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="disponibilidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblProductoMarca" Relationship="MobileToolStoreModel.FK__TblProduc__codig__4AB81AF0" FromRole="TblProductos" ToRole="TblProductoMarca" />
+    <NavigationProperty Name="TblProductoProveedor" Relationship="MobileToolStoreModel.FK__TblProduc__codig__48CFD27E" FromRole="TblProductos" ToRole="TblProductoProveedor" />
+  </EntityType>
+  <EntityType Name="TblProveedores">
+    <Key>
+      <PropertyRef Name="cedulaLegalProveedor" />
+    </Key>
+    <Property Name="cedulaLegalProveedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombreProveedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblProductoProveedor" Relationship="MobileToolStoreModel.FK__TblProduc__cedul__49C3F6B7" FromRole="TblProveedores" ToRole="TblProductoProveedor" />
+  </EntityType>
+  <EntityType Name="TblUsuarios">
+    <Key>
+      <PropertyRef Name="correoElectronico" />
+    </Key>
+    <Property Name="correoElectronico" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contrasenna" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__TblDetall__codig__4CA06362">
+    <End Type="MobileToolStoreModel.TblFacturas" Role="TblFacturas" Multiplicity="1" />
+    <End Type="MobileToolStoreModel.TblDetalleFactura" Role="TblDetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblFacturas">
+        <PropertyRef Name="codigoFactura" />
+      </Principal>
+      <Dependent Role="TblDetalleFactura">
+        <PropertyRef Name="codigoFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__4BAC3F29">
+    <End Type="MobileToolStoreModel.TblMarcas" Role="TblMarcas" Multiplicity="1" />
+    <End Type="MobileToolStoreModel.TblProductoMarca" Role="TblProductoMarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMarcas">
+        <PropertyRef Name="codigoMarca" />
+      </Principal>
+      <Dependent Role="TblProductoMarca">
+        <PropertyRef Name="codigoMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__4AB81AF0">
+    <End Type="MobileToolStoreModel.TblProductos" Role="TblProductos" Multiplicity="1" />
+    <End Type="MobileToolStoreModel.TblProductoMarca" Role="TblProductoMarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProductos">
+        <PropertyRef Name="codigoBarras" />
+      </Principal>
+      <Dependent Role="TblProductoMarca">
+        <PropertyRef Name="codigoBarras" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__cedul__49C3F6B7">
+    <End Type="MobileToolStoreModel.TblProveedores" Role="TblProveedores" Multiplicity="1" />
+    <End Type="MobileToolStoreModel.TblProductoProveedor" Role="TblProductoProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProveedores">
+        <PropertyRef Name="cedulaLegalProveedor" />
+      </Principal>
+      <Dependent Role="TblProductoProveedor">
+        <PropertyRef Name="cedulaLegalProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__48CFD27E">
+    <End Type="MobileToolStoreModel.TblProductos" Role="TblProductos" Multiplicity="1" />
+    <End Type="MobileToolStoreModel.TblProductoProveedor" Role="TblProductoProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProductos">
+        <PropertyRef Name="codigoBarras" />
+      </Principal>
+      <Dependent Role="TblProductoProveedor">
+        <PropertyRef Name="codigoBarras" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TblProductosMasVendidos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoBarras" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

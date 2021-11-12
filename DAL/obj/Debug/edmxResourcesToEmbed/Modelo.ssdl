@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileToolStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblComentario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreCompleto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correoElectronico" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mensaje" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblDetalleFactura">
+    <Key>
+      <PropertyRef Name="codigoDetalleFactura" />
+      <PropertyRef Name="codigoFactura" />
+    </Key>
+    <Property Name="codigoDetalleFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoFactura" Type="int" Nullable="false" />
+    <Property Name="codigoBarras" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="12" Scale="1" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="subtotal" Type="decimal" Precision="12" Scale="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblFacturas">
+    <Key>
+      <PropertyRef Name="codigoFactura" />
+    </Key>
+    <Property Name="codigoFactura" Type="int" Nullable="false" />
+    <Property Name="nombreCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaFacturacion" Type="date" Nullable="false" />
+    <Property Name="totalPagar" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="numeroTarjeta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaCaducidad" Type="date" Nullable="false" />
+    <Property Name="codigoSeguridad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblMarcas">
+    <Key>
+      <PropertyRef Name="codigoMarca" />
+    </Key>
+    <Property Name="codigoMarca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombreMarca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="paisOrigen" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correoElectronico" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProductoMarca">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoBarras" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigoMarca" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProductoProveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoBarras" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cedulaLegalProveedor" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProductos">
+    <Key>
+      <PropertyRef Name="codigoBarras" />
+    </Key>
+    <Property Name="codigoBarras" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="modelo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="disponibilidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="foto" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProductosMasVendidos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoBarras" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="foto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProveedores">
+    <Key>
+      <PropertyRef Name="cedulaLegalProveedor" />
+    </Key>
+    <Property Name="cedulaLegalProveedor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombreProveedor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correoElectronico" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contacto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblUsuarios">
+    <Key>
+      <PropertyRef Name="correoElectronico" />
+    </Key>
+    <Property Name="correoElectronico" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contrasenna" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rol" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__TblDetall__codig__4CA06362">
+    <End Role="TblFacturas" Type="Self.TblFacturas" Multiplicity="1" />
+    <End Role="TblDetalleFactura" Type="Self.TblDetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblFacturas">
+        <PropertyRef Name="codigoFactura" />
+      </Principal>
+      <Dependent Role="TblDetalleFactura">
+        <PropertyRef Name="codigoFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__cedul__49C3F6B7">
+    <End Role="TblProveedores" Type="Self.TblProveedores" Multiplicity="1" />
+    <End Role="TblProductoProveedor" Type="Self.TblProductoProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProveedores">
+        <PropertyRef Name="cedulaLegalProveedor" />
+      </Principal>
+      <Dependent Role="TblProductoProveedor">
+        <PropertyRef Name="cedulaLegalProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__48CFD27E">
+    <End Role="TblProductos" Type="Self.TblProductos" Multiplicity="1" />
+    <End Role="TblProductoProveedor" Type="Self.TblProductoProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProductos">
+        <PropertyRef Name="codigoBarras" />
+      </Principal>
+      <Dependent Role="TblProductoProveedor">
+        <PropertyRef Name="codigoBarras" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__4AB81AF0">
+    <End Role="TblProductos" Type="Self.TblProductos" Multiplicity="1" />
+    <End Role="TblProductoMarca" Type="Self.TblProductoMarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProductos">
+        <PropertyRef Name="codigoBarras" />
+      </Principal>
+      <Dependent Role="TblProductoMarca">
+        <PropertyRef Name="codigoBarras" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblProduc__codig__4BAC3F29">
+    <End Role="TblMarcas" Type="Self.TblMarcas" Multiplicity="1" />
+    <End Role="TblProductoMarca" Type="Self.TblProductoMarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMarcas">
+        <PropertyRef Name="codigoMarca" />
+      </Principal>
+      <Dependent Role="TblProductoMarca">
+        <PropertyRef Name="codigoMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MobileToolStoreModelStoreContainer">
+    <EntitySet Name="TblComentario" EntityType="Self.TblComentario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDetalleFactura" EntityType="Self.TblDetalleFactura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblFacturas" EntityType="Self.TblFacturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMarcas" EntityType="Self.TblMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProductoMarca" EntityType="Self.TblProductoMarca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProductoProveedor" EntityType="Self.TblProductoProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProductos" EntityType="Self.TblProductos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProductosMasVendidos" EntityType="Self.TblProductosMasVendidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProveedores" EntityType="Self.TblProveedores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUsuarios" EntityType="Self.TblUsuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TblDetall__codig__4CA06362" Association="Self.FK__TblDetall__codig__4CA06362">
+      <End Role="TblFacturas" EntitySet="TblFacturas" />
+      <End Role="TblDetalleFactura" EntitySet="TblDetalleFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__cedul__49C3F6B7" Association="Self.FK__TblProduc__cedul__49C3F6B7">
+      <End Role="TblProveedores" EntitySet="TblProveedores" />
+      <End Role="TblProductoProveedor" EntitySet="TblProductoProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__48CFD27E" Association="Self.FK__TblProduc__codig__48CFD27E">
+      <End Role="TblProductos" EntitySet="TblProductos" />
+      <End Role="TblProductoProveedor" EntitySet="TblProductoProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__4AB81AF0" Association="Self.FK__TblProduc__codig__4AB81AF0">
+      <End Role="TblProductos" EntitySet="TblProductos" />
+      <End Role="TblProductoMarca" EntitySet="TblProductoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblProduc__codig__4BAC3F29" Association="Self.FK__TblProduc__codig__4BAC3F29">
+      <End Role="TblMarcas" EntitySet="TblMarcas" />
+      <End Role="TblProductoMarca" EntitySet="TblProductoMarca" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

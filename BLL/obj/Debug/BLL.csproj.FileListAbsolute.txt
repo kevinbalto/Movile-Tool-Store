@@ -1,0 +1,10 @@
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\BLL\bin\Debug\BLL.dll
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\BLL\bin\Debug\BLL.pdb
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\BLL\obj\Debug\BLL.dll
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\BLL\obj\Debug\BLL.pdb
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\AppwebMTS\BLL\bin\Debug\BLL.dll
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\AppwebMTS\BLL\bin\Debug\BLL.pdb
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\AppwebMTS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\AppwebMTS\BLL\obj\Debug\BLL.dll
+C:\Users\kbalt\OneDrive\Escritorio\Cursos Ciclo II 2020\Analisis de Sistemas\AppwebMTS\AppwebMTS\BLL\obj\Debug\BLL.pdb

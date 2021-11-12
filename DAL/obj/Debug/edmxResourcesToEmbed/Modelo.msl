@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MobileToolStoreModelStoreContainer" CdmEntityContainer="MobileToolStoreEntities">
+    <EntitySetMapping Name="TblComentario">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblComentario">
+        <MappingFragment StoreEntitySet="TblComentario">
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDetalleFactura">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblDetalleFactura">
+        <MappingFragment StoreEntitySet="TblDetalleFactura">
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="codigoBarras" ColumnName="codigoBarras" />
+          <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+          <ScalarProperty Name="codigoDetalleFactura" ColumnName="codigoDetalleFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblFacturas">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblFacturas">
+        <MappingFragment StoreEntitySet="TblFacturas">
+          <ScalarProperty Name="codigoSeguridad" ColumnName="codigoSeguridad" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="numeroTarjeta" ColumnName="numeroTarjeta" />
+          <ScalarProperty Name="totalPagar" ColumnName="totalPagar" />
+          <ScalarProperty Name="fechaFacturacion" ColumnName="fechaFacturacion" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+          <ScalarProperty Name="codigoFactura" ColumnName="codigoFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMarcas">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblMarcas">
+        <MappingFragment StoreEntitySet="TblMarcas">
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="paisOrigen" ColumnName="paisOrigen" />
+          <ScalarProperty Name="nombreMarca" ColumnName="nombreMarca" />
+          <ScalarProperty Name="codigoMarca" ColumnName="codigoMarca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductoMarca">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblProductoMarca">
+        <MappingFragment StoreEntitySet="TblProductoMarca">
+          <ScalarProperty Name="codigoMarca" ColumnName="codigoMarca" />
+          <ScalarProperty Name="codigoBarras" ColumnName="codigoBarras" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductoProveedor">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblProductoProveedor">
+        <MappingFragment StoreEntitySet="TblProductoProveedor">
+          <ScalarProperty Name="cedulaLegalProveedor" ColumnName="cedulaLegalProveedor" />
+          <ScalarProperty Name="codigoBarras" ColumnName="codigoBarras" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductos">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblProductos">
+        <MappingFragment StoreEntitySet="TblProductos">
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codigoBarras" ColumnName="codigoBarras" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProveedores">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblProveedores">
+        <MappingFragment StoreEntitySet="TblProveedores">
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="nombreProveedor" ColumnName="nombreProveedor" />
+          <ScalarProperty Name="cedulaLegalProveedor" ColumnName="cedulaLegalProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsuarios">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblUsuarios">
+        <MappingFragment StoreEntitySet="TblUsuarios">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="contrasenna" ColumnName="contrasenna" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductosMasVendidos">
+      <EntityTypeMapping TypeName="MobileToolStoreModel.TblProductosMasVendidos">
+        <MappingFragment StoreEntitySet="TblProductosMasVendidos">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="codigoBarras" ColumnName="codigoBarras" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
